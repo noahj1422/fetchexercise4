@@ -6,25 +6,26 @@
     <title>Homepage</title>
     <script defer src="https://cdn.jsdelivr.net/gh/hankhank10/alpine-fetch@main/alpine-fetch.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="screen.css">
   </head>
-  <body>
-    <h1>Home</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
+  <body class="bg-gray-100 text-gray-800">
+    <h1 class="text-3xl font-bold text-center my-6">Home</h1>
+    <nav class="bg-white shadow-md">
+      <ul class="flex justify-center space-x-4 py-4">
+        <li><a href="index.html" class="text-blue-500 font-semibold">Home</a></li>
+        <li><a href="about.html" class="text-gray-600 hover:text-blue-500">About</a></li>
       </ul>
     </nav>
 
     <!-- Alpine.js Component -->
-    <div x-data="fetchData" class="data-container">
-      <button @click="loadData">Fetch Data</button>
-      <div class="data-display" x-show="data.length > 0">
+    <div x-data="fetchData" class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+      <button @click="loadData" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Fetch Data</button>
+      <div class="mt-6" x-show="data.length > 0">
         <template x-for="item in data" :key="item.text">
-          <div class="data-item">
-            <p x-text="item.text"></p>
-            <p><strong>Author:</strong> <span x-text="item.author"></span></p>
+          <div class="p-4 border-b border-gray-200">
+            <p class="text-lg font-medium" x-text="item.text"></p>
+            <p class="text-sm text-gray-500 mt-1"><strong>Author:</strong> <span x-text="item.author"></span></p>
           </div>
         </template>
       </div>
