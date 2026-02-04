@@ -2,3 +2,46 @@
 a.active {
     font-weight: bold;
 }
+
+.data-container {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.data-container button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.data-container button:hover {
+  background-color: #0056b3;
+}
+
+.data-display {
+  margin-top: 20px;
+}
+
+.data-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.data-item h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.data-item p {
+  margin: 0;
+  color: #555;
+}

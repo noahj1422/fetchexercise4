@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="screen.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/hankhank10/alpine-fetch@main/alpine-fetch.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
     <h1>Home</h1>
@@ -14,6 +16,20 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
+
+    <!-- Alpine.js Component -->
+    <div x-data="fetchData" class="data-container">
+      <button @click="loadData">Fetch Data</button>
+      <div class="data-display" x-show="data.length > 0">
+        <template x-for="item in data" :key="item.text">
+          <div class="data-item">
+            <p x-text="item.text"></p>
+            <p><strong>Author:</strong> <span x-text="item.author"></span></p>
+          </div>
+        </template>
+      </div>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
